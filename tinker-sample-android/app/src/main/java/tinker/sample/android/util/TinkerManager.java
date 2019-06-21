@@ -16,6 +16,7 @@
 
 package tinker.sample.android.util;
 
+import com.tencent.tinker.entry.ApplicationLike;
 import com.tencent.tinker.lib.listener.PatchListener;
 import com.tencent.tinker.lib.patch.AbstractPatch;
 import com.tencent.tinker.lib.patch.UpgradePatch;
@@ -24,8 +25,6 @@ import com.tencent.tinker.lib.reporter.PatchReporter;
 import com.tencent.tinker.lib.tinker.TinkerInstaller;
 import com.tencent.tinker.lib.util.TinkerLog;
 import com.tencent.tinker.lib.util.UpgradePatchRetry;
-import com.tencent.tinker.loader.app.ApplicationLike;
-
 import tinker.sample.android.crash.SampleUncaughtExceptionHandler;
 import tinker.sample.android.reporter.SampleLoadReporter;
 import tinker.sample.android.reporter.SamplePatchListener;
@@ -38,7 +37,7 @@ import tinker.sample.android.service.SampleResultService;
 public class TinkerManager {
     private static final String TAG = "Tinker.TinkerManager";
 
-    private static ApplicationLike                applicationLike;
+    private static ApplicationLike applicationLike;
     private static SampleUncaughtExceptionHandler uncaughtExceptionHandler;
     private static boolean isInstalled = false;
 

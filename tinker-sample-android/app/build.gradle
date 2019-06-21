@@ -11,8 +11,8 @@ dependencies {
 
         implementation "com.android.support:multidex:1.0.1"
         //use to test multiDex
-//    implementation group: 'com.google.guava', name: 'guava', version: '19.0'
-//    implementation "org.scala-lang:scala-library:2.11.7"
+    implementation group: 'com.google.guava', name: 'guava', version: '19.0'
+    implementation "org.scala-lang:scala-library:2.11.7"
     } else {
         compile fileTree(dir: 'libs', include: ['*.jar'])
         testCompile 'junit:junit:4.12'
@@ -23,8 +23,8 @@ dependencies {
         compile "com.android.support:multidex:1.0.1"
 
         //use to test multiDex
-//    compile group: 'com.google.guava', name: 'guava', version: '19.0'
-//    compile "org.scala-lang:scala-library:2.11.7"
+    compile group: 'com.google.guava', name: 'guava', version: '19.0'
+    compile "org.scala-lang:scala-library:2.11.7"
     }
 }
 
@@ -114,7 +114,9 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
+            multiDexEnabled true
+            multiDexKeepProguard file('keep_in_main_dex.pro')
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), project.file('proguard-rules.pro')
         }
